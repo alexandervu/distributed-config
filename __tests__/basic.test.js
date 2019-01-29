@@ -7,7 +7,7 @@ describe('Test read external and additional config file', () => {
 
   test('Import named external file without namespace', () => {
     distconf.importFile('external.json', './__mocks__/external')
-    expect(distconf.store()).toEqual({external: true, nested: {value: 'json'}})
+    expect(distconf.store()).toEqual({ external: true, nested: { value: 'json' } })
   })
 
   test('Clean data store', () => {
@@ -17,12 +17,12 @@ describe('Test read external and additional config file', () => {
 
   test('Import named external file with namespace', () => {
     distconf.importFile('external.json', './__mocks__/external', 'myspace')
-    expect(distconf.store()).toEqual({myspace: {external: true, nested: {value: 'json'}}})
+    expect(distconf.store()).toEqual({ myspace: { external: true, nested: { value: 'json' } } })
   })
 
   test('Import package.json from project to own namespace', () => {
     distconf.importFile('package.json', null, 'package')
-    expect(distconf.get('package.name')).toEqual('distconf')
+    expect(distconf.get('package.name')).toEqual('distributed-config')
   })
 
   test('Should throw an error when file argument is missing', () => {
@@ -39,27 +39,27 @@ describe('Test set, get, has and clean data store ', () => {
 
   test('Set inside empty data store a property with string value ', () => {
     distconf.set('module', 'distconf')
-    expect(distconf.store()).toEqual({module: 'distconf'})
+    expect(distconf.store()).toEqual({ module: 'distconf' })
   })
 
   test('Set inside empty data store a property with numer value ', () => {
     distconf.set('version', 1)
-    expect(distconf.store()).toEqual({module: 'distconf', version: 1})
+    expect(distconf.store()).toEqual({ module: 'distconf', version: 1 })
   })
 
   test('Set inside empty data store a property with boolean value ', () => {
     distconf.set('valid', true)
-    expect(distconf.store()).toEqual({module: 'distconf', version: 1, valid: true})
+    expect(distconf.store()).toEqual({ module: 'distconf', version: 1, valid: true })
   })
 
   test('Set inside empty data store a property with float value ', () => {
     distconf.set('subversion', 1.7)
-    expect(distconf.store()).toEqual({module: 'distconf', version: 1, valid: true, subversion: 1.7})
+    expect(distconf.store()).toEqual({ module: 'distconf', version: 1, valid: true, subversion: 1.7 })
   })
 
   test('Overwrite a value with a nested one', () => {
     distconf.set('subversion.one', 2)
-    expect(distconf.store()).toEqual({module: 'distconf', version: 1, valid: true, subversion: {one: 2}})
+    expect(distconf.store()).toEqual({ module: 'distconf', version: 1, valid: true, subversion: { one: 2 } })
   })
 
   test('Verify property exists', () => {
