@@ -1,0 +1,28 @@
+{
+  "tags": {
+      "allowUnknownTags": false
+  },
+  "source": {
+      "include": "./",
+      "includePattern": ".js$",
+      "excludePattern": "(node_modules/|docs|__tests__|__mocks__|coverage|.welintrc.js)"
+  },
+  "plugins": [
+      "plugins/markdown"
+  ],
+  "opts": {
+      "template": "node_modules/docdash/",
+      "encoding": "utf8",
+      "destination": "docs/api/",
+      "recurse": true,
+      "verbose": true
+  },
+  "templates": {
+      "cleverLinks": false,
+      "monospaceLinks": false
+  },
+  "docdash": {
+    "static": true,
+    "sort": false
+  }
+}

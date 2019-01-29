@@ -1,0 +1,9 @@
+node_modules
+test
+__tests__
+__mocks__
+tools
+docs
+coverage
+.*
+TODO.md

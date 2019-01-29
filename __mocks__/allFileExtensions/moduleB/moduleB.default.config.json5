@@ -1,0 +1,6 @@
+{
+  moduleB: {
+    default: true
+  }
+  // some comments here
+}

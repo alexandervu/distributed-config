@@ -1,0 +1,7 @@
+{
+  # some comments here
+  moduleA: {
+    default: true
+  }
+  LogError
+}
